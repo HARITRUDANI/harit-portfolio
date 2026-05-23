@@ -1,0 +1,18 @@
+# Lefthook — pre-commit + pre-push gates.
+# Prevents broken builds, lint regressions, type errors, and constitution drift
+# from ever entering history.
+
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: "*.{ts,tsx,js,jsx,mjs}"
+      run: pnpm exec eslint {staged_files}
+    typecheck:
+      glob: "*.{ts,tsx}"
+      run: pnpm exec tsc --noEmit
+
+pre-push:
+  commands:
+    build:
+      run: pnpm build

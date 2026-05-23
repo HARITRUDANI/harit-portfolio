@@ -1,26 +1,263 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-background: #080808;
+  --color-surface: #111111;
+  --color-surface-2: #161616;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-fg: #f0ece4;
+  --color-fg-muted: #8a8780;
+  --color-fg-dim: #5a5854;
+
+  --color-accent: #c8a96e;
+  --color-accent-dim: #a08856;
+
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.14);
+
+  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-space-grotesk);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    background: #080808;
+    color: #f0ece4;
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #080808;
+    color: #f0ece4;
+    font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Section anchors: offset for fixed nav so headings don't hide */
+  :where(section[id]) {
+    scroll-margin-top: 5rem;
+  }
+
+  /* Focus ring — visible only on keyboard navigation */
+  :focus-visible {
+    outline: 1px solid #c8a96e;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  /* No outline for explicit click/touch interactions */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  ::selection {
+    background: #c8a96e;
+    color: #080808;
+  }
+
+  /* Paint isolation per section — saves repaints when one section animates */
+  section[id] {
+    contain: layout style;
+  }
+
+  /* GPU hint for elements that animate transforms heavily */
+  .will-transform {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .will-opacity {
+    will-change: opacity;
+  }
+
+  /* Respect reduced motion: collapse animations + transitions */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Slim, premium scrollbars on browsers that show them */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(200, 169, 110, 0.16) transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(200, 169, 110, 0.16);
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(200, 169, 110, 0.32);
+    background-clip: padding-box;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .font-mono {
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .glow-radial {
+    background: radial-gradient(
+      ellipse 80% 60% at 50% 0%,
+      rgba(200, 169, 110, 0.05) 0%,
+      transparent 60%
+    );
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes revealSoft {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .reveal-soft {
+    animation: revealSoft 800ms ease forwards;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+   * VOID MODE — the Simplification Moment
+   *
+   * When the Pause section becomes prominent in the viewport,
+   * `html.void-mode` is set. The entire site quietly recedes so
+   * a single sentence can do its work. Then everything rebuilds.
+   * ───────────────────────────────────────────────────────── */
+
+  /* Always transition these targets — so entering AND leaving void are smooth. */
+  header,
+  [data-ambient] {
+    transition:
+      opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+      filter 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+      backdrop-filter 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* nav recedes into the dark */
+  html.void-mode header {
+    opacity: 0.22;
+    backdrop-filter: blur(24px);
+  }
+
+  /* particles dim almost out — they reappear when scrolling on */
+  html.void-mode [data-ambient="particles"] {
+    opacity: 0.12;
+  }
+
+  /* cursor follower softens but still tracks */
+  html.void-mode [data-ambient="cursor"] {
+    opacity: 0.4;
+  }
+
+  /* scroll progress recedes */
+  html.void-mode [data-ambient="progress"] {
+    opacity: 0.25;
+  }
+
+  /* Glassmorphism — sits over background, subtle blur and border */
+  .glass {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0.008) 70%,
+      rgba(200, 169, 110, 0.012)
+    );
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.04),
+      0 28px 80px -40px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(200, 169, 110, 0.02);
+  }
+
+  .glass-soft {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.015),
+      rgba(255, 255, 255, 0.004) 70%
+    );
+    backdrop-filter: blur(8px) saturate(110%);
+    -webkit-backdrop-filter: blur(8px) saturate(110%);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  /* Glow border that reacts to hover */
+  .glow-border {
+    position: relative;
+  }
+  .glow-border::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(200, 169, 110, 0),
+      rgba(200, 169, 110, 0.4) 50%,
+      rgba(200, 169, 110, 0)
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 600ms ease;
+    pointer-events: none;
+  }
+  .glow-border:hover::before {
+    opacity: 1;
+  }
 }

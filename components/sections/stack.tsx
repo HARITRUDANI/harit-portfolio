@@ -5,6 +5,7 @@ import { EASE } from "@/lib/motion";
 import { stack } from "@/lib/data";
 import { Section } from "@/components/section-wrapper";
 import { FadeIn } from "@/components/motion/fade-in";
+import { TechIcon } from "@/components/tech-icon";
 
 export function Stack() {
   return (
@@ -40,16 +41,20 @@ export function Stack() {
               </div>
             </div>
             <div className="md:col-span-9">
-              <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
+              <ul className="flex flex-wrap items-center gap-x-6 gap-y-3">
                 {group.items.map((item) => (
-                  <span
-                    key={item}
-                    className="text-[15px] text-[#f0ece4] transition-colors hover:text-[#c8a96e]"
+                  <li
+                    key={item.name}
+                    className="inline-flex items-center gap-2 text-[15px] text-[#f0ece4] transition-colors duration-300 hover:text-[#c8a96e]"
                   >
-                    {item}
-                  </span>
+                    <TechIcon
+                      icon={item.icon}
+                      className="h-[14px] w-[14px] opacity-55 transition-opacity duration-300 group-hover:opacity-100"
+                    />
+                    <span>{item.name}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </motion.div>
         ))}

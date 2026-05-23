@@ -4,7 +4,39 @@
  * itself automatically — no need to bump numbers by hand.
  */
 
+import {
+  siReact,
+  siNextdotjs,
+  siTypescript,
+  siJavascript,
+  siHtml5,
+  siCss,
+  siTailwindcss,
+  siRedux,
+  siNodedotjs,
+  siExpress,
+  siMongodb,
+  siPostgresql,
+  siGit,
+  siGithub,
+  siVercel,
+  siDocker,
+  siPostman,
+  siFigma,
+  siFramer,
+  siVite,
+} from "simple-icons";
 import { careerYears, lastUpdatedLabel, chipperLeadDuration } from "@/lib/calc";
+
+export type StackItem = {
+  name: string;
+  icon: { title: string; slug: string; path: string; hex: string };
+};
+
+export type StackGroup = {
+  group: string;
+  items: readonly StackItem[];
+};
 
 export const person = {
   name: "Harit Rudani",
@@ -325,30 +357,56 @@ export const globalExperience = [
   },
 ] as const;
 
-export const stack = [
+/**
+ * Curated production stack — only technologies actually used across the
+ * portfolio's case studies and shipped systems. Each item carries a
+ * simple-icons brand mark, rendered monochrome to inherit the section's
+ * editorial palette. No icon soup; the icons sit beside the labels as
+ * embedded signal, not decoration.
+ */
+export const stack: readonly StackGroup[] = [
   {
-    group: "Core",
-    items: ["React", "Next.js", "TypeScript", "JavaScript ES6+"],
+    group: "Core Frontend",
+    items: [
+      { name: "React", icon: siReact },
+      { name: "Next.js", icon: siNextdotjs },
+      { name: "TypeScript", icon: siTypescript },
+      { name: "JavaScript", icon: siJavascript },
+      { name: "HTML", icon: siHtml5 },
+      { name: "CSS", icon: siCss },
+      { name: "Tailwind", icon: siTailwindcss },
+      { name: "Redux", icon: siRedux },
+    ],
   },
   {
-    group: "State & Data",
-    items: ["Redux Toolkit", "Zustand", "TanStack Query", "Context API"],
+    group: "Backend & Systems",
+    items: [
+      { name: "Node.js", icon: siNodedotjs },
+      { name: "Express", icon: siExpress },
+      { name: "MongoDB", icon: siMongodb },
+      { name: "PostgreSQL", icon: siPostgresql },
+    ],
   },
   {
-    group: "UI",
-    items: ["Tailwind CSS", "shadcn/ui", "Framer Motion"],
+    group: "Engineering & Delivery",
+    items: [
+      { name: "Git", icon: siGit },
+      { name: "GitHub", icon: siGithub },
+      { name: "Vercel", icon: siVercel },
+      { name: "Docker", icon: siDocker },
+      { name: "Postman", icon: siPostman },
+    ],
   },
   {
-    group: "Performance",
-    items: ["Code splitting", "Lazy loading", "Memoization", "Core Web Vitals"],
+    group: "UI & Interaction",
+    items: [
+      { name: "Figma", icon: siFigma },
+      { name: "Framer Motion", icon: siFramer },
+    ],
   },
   {
-    group: "Backend",
-    items: ["Node.js", "Express.js", "MongoDB", "REST APIs"],
-  },
-  {
-    group: "Tooling",
-    items: ["Git", "Vercel", "ESLint", "Prettier"],
+    group: "Build Tooling",
+    items: [{ name: "Vite", icon: siVite }],
   },
 ] as const;
 

@@ -45,7 +45,7 @@ export function Stack() {
                 {group.items.map((item) => (
                   <li
                     key={item.name}
-                    className="inline-flex items-center gap-2 text-[15px] text-[#f0ece4] transition-colors duration-300 hover:text-[#c8a96e]"
+                    className="group inline-flex items-center gap-2 text-[15px] text-[#f0ece4] transition-colors duration-300 hover:text-[#c8a96e]"
                   >
                     <TechIcon
                       icon={item.icon}

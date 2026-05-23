@@ -19,15 +19,14 @@ type TechIconProps = SVGProps<SVGSVGElement> & {
 export function TechIcon({ icon, className, ...props }: TechIconProps) {
   return (
     <svg
-      role="img"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
       aria-hidden="true"
+      focusable="false"
       className={className}
       {...props}
     >
-      <title>{icon.title}</title>
       <path d={icon.path} />
     </svg>
   );

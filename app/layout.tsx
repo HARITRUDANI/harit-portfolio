@@ -138,7 +138,10 @@ export default function RootLayout({
       <body
         className="grain min-h-screen bg-[#080808] text-[#f0ece4]"
         suppressHydrationWarning
+        data-author="Harit Rudani"
+        data-site="haritrudani.vercel.app"
       >
+        {/* authored: haritrudani.vercel.app — Harit Rudani */}
         <a
           href="#top"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-sm focus:bg-[#c8a96e] focus:px-4 focus:py-2 focus:font-mono focus:text-[12px] focus:uppercase focus:tracking-[0.2em] focus:text-[#080808]"

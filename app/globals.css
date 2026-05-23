@@ -232,6 +232,26 @@
     border: 1px solid rgba(255, 255, 255, 0.04);
   }
 
+  /* Atmospheric text — copy-friction without blocking assistive tech */
+  .authored {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Print provenance — passive watermark, invisible on screen */
+  @media print {
+    body::after {
+      content: "haritrudani.vercel.app — Harit Rudani";
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      font-size: 9px;
+      opacity: 0.35;
+      font-family: monospace;
+      letter-spacing: 0.12em;
+    }
+  }
+
   /* Glow border that reacts to hover */
   .glow-border {
     position: relative;

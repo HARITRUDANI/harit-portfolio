@@ -90,14 +90,14 @@ export function Pause({ label, primary, secondary, compact = false }: PauseProps
         className="relative z-10 mx-auto max-w-3xl px-6 text-center"
       >
         <p
-          className="font-display font-light leading-[1.2] tracking-[-0.015em] text-balance text-[#f0ece4]"
+          className="authored font-display font-light leading-[1.2] tracking-[-0.015em] text-balance text-[#f0ece4]"
           style={{ fontSize: "clamp(1.75rem, 3.8vw, 3.4rem)" }}
         >
           {primary}
         </p>
         {secondary && (
           <p
-            className="mt-8 font-display font-light leading-[1.4] text-[#8a8780] text-balance"
+            className="authored mt-8 font-display font-light leading-[1.4] text-[#8a8780] text-balance"
             style={{ fontSize: "clamp(0.95rem, 1.2vw, 1.1rem)" }}
           >
             {secondary}

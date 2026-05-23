@@ -185,6 +185,7 @@ export function ThoughtMap() {
                       letterSpacing: "0.05em",
                       textTransform: "uppercase",
                       transition: "fill 500ms",
+                      userSelect: "none",
                     }}
                   >
                     {node.label}

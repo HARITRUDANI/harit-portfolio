@@ -38,6 +38,9 @@ export const metadata: Metadata = {
   applicationName: SITE_NAME,
   authors: [{ name: PERSON.name, url: SITE_URL }],
   creator: PERSON.name,
+  verification: {
+    google: "KkPkzf86w-Ya1oVQOSVi-8OY-HiqYR0J_rRuRWLtIqw",
+  },
   publisher: PERSON.name,
   generator: "Next.js",
   keywords: [...SITE_KEYWORDS],

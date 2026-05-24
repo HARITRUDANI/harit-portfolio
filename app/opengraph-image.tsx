@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { PERSON } from "@/lib/seo";
+import { careerYears } from "@/lib/calc";
 
 export const runtime = "edge";
 export const alt = `${PERSON.name} — ${PERSON.jobTitle}`;
@@ -7,6 +8,7 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function OpengraphImage() {
+  const years = careerYears();
   return new ImageResponse(
     (
       <div
@@ -112,15 +114,15 @@ export default async function OpengraphImage() {
             }}
           >
             <span style={{ color: "#c8a96e", display: "flex" }}>
-              3.5 YEARS
+              {years}+ YEARS
             </span>
             <span style={{ color: "#3a3a3a", display: "flex" }}>·</span>
             <span style={{ color: "#c8a96e", display: "flex" }}>
-              9 SYSTEMS
+              5 SYSTEMS
             </span>
             <span style={{ color: "#3a3a3a", display: "flex" }}>·</span>
             <span style={{ color: "#c8a96e", display: "flex" }}>
-              600K+ SKUS
+              5.5M+ REDEMPTIONS
             </span>
             <span style={{ color: "#3a3a3a", display: "flex" }}>·</span>
             <span style={{ color: "#c8a96e", display: "flex" }}>

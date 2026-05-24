@@ -54,18 +54,16 @@ export const person = {
 export const stats = [
   {
     get value() {
-      return `${careerYears()} years`;
+      return `${careerYears()}+ years`;
     },
     label: "in production",
   },
-  { value: "9 systems", label: "shipped" },
-  { value: "600k+ SKUs", label: "in production" },
+  { value: "5 systems", label: "shipped" },
+  { value: "5.5M+ redemptions", label: "delivered" },
   { value: "3 countries", label: "Israel · California · India" },
 ] as const;
 
 export const opening = {
-  whyIBuild:
-    "I enjoy building systems that stay understandable even as products become more complex.",
   memory:
     "The first time a production deployment broke something I didn't expect, I realized architecture decisions are really communication decisions — between you and the engineer who reads your code two years later.",
 } as const;
@@ -99,89 +97,88 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: "consumer-platform",
+    id: "chipper-platform",
     index: "01",
     title: "Consumer Savings Platform",
-    category: "Consumer · Web",
-    role: "Full Stack Lead",
+    category: "Consumer · Web · B2B",
+    role: "Technical Lead",
     region: "Israel",
     get duration() {
       return chipperLeadDuration();
     },
     context:
-      "Large-scale coupons and deals platform with a complex admin system, deeply nested form workflows, and real-time data requirements.",
+      "Digital coupon platform serving consumers and providers across Israel. Three portals: a consumer app, a provider campaign dashboard, and a new B2B multi-tenant system layering AI on top.",
     constraint:
-      "Admin needed to manage thousands of merchant submissions, deal categories, and user data — without slowing the people who used it eight hours a day.",
+      "Inherited a system with silent divergence between staging and production — missing tables, schema mismatches, fields that existed in one and not the other. The client needed staging code in production without touching a single live user.",
     decision:
-      "Modular form architecture with shared validation primitives. State boundaries drawn around business workflows, not around UI components.",
+      "Built an intermediate pre-production environment using staging code against the production database. Mapped every schema delta before a single line moved. Deep testing, late-night debugging, every assumption validated against the real DB.",
     tradeoff:
-      "More upfront design work. Slower for the first feature. Considerably faster for everything that came after.",
+      "An extra environment to maintain and a slower path to deployment. The alternative was risking the entire live user base on an untested migration.",
     result:
-      "Admin throughput improved. New form types ship in hours instead of days. Same architecture has held under one year of feature pressure.",
+      "Zero user impact. Deployment completed at 4:30 AM. Team publicly praised by client leadership. Now leading the B2B expansion with multi-tenant coupon validation and AI integrations across two providers.",
     metric:
-      "40+ form types delivered on one shared validation engine — each new type ships in hours, not days.",
+      "156,156 consumers · 5,526,279 coupon redemptions delivered.",
     lesson:
-      "The hardest forms aren't visual problems. They are state problems wearing UI clothes.",
-    stack: ["React", "TypeScript", "Next.js", "Node.js", "REST"],
+      "The most dangerous deployments are the ones where staging and production have quietly diverged. The fix isn't courage — it's a safe intermediate environment.",
+    stack: ["React", "Node.js", "Express", "PostgreSQL", "AI"],
     architecture: [
-      { label: "Route Layer", note: "Code-split per admin module. Average chunk size kept under 80KB." },
-      { label: "Form Engine", note: "Shared validation, conditional fields, reusable across 40+ form types." },
-      { label: "State Layer", note: "Drawn around business workflows, not UI components. Easier to reason about, easier to test." },
-      { label: "API Layer", note: "Typed contracts. Optimistic updates only where the user expects them." },
+      { label: "Portal Split", note: "Consumer, provider, and B2B systems sharing a core but isolated where they should be. No portal can break another." },
+      { label: "Migration Strategy", note: "Pre-production environment built from staging code + production DB. Every schema delta mapped and tested before live deploy." },
+      { label: "Multi-tenant Validation", note: "Coupon validation rules vary per business. Rule engine evaluates against tenant context, not hardcoded assumptions." },
+      { label: "AI Layer", note: "Two AI providers integrated for content and decision support — abstracted behind a single interface so either can be swapped." },
     ],
   },
   {
-    id: "ai-saas",
+    id: "ai-proposal",
     index: "02",
     title: "AI Proposal Intelligence",
     category: "B2B SaaS · AI",
-    role: "Full Stack Technical Lead",
+    role: "Full Stack Developer",
     region: "California",
     context:
-      "B2B SaaS for HR and insurance brokers. AI features layered into proposal management — generation, comparison, and intelligent search across historical proposals.",
+      "Proposal intelligence platform for PEOs and brokers — unifying CRM, underwriting, commissions, and compliance into one AI-powered workflow. Same client expanded scope to a second system in the consumer space.",
     constraint:
-      "AI responses are slow. UI cannot feel slow. Streaming was not optional.",
+      "Proposal generation needed to work from real email inboxes and attached documents — not a form. The system had to understand what it was reading before it could write anything useful.",
     decision:
-      "Streaming-first response handling with stable rendering boundaries. AI output rendered as it arrived; UI shell stayed stable around it.",
+      "Built an AI pipeline: email parsing → document extraction → structured proposal generation. Each stage independently testable. AI-assisted development used to iterate on prompt and schema design faster than a traditional build cycle would allow.",
     tradeoff:
-      "More complex client state. The payoff was perceived performance — users stopped asking if the page was broken.",
+      "Pipeline complexity grows with each new document format. Scoped to the most common formats first, with clear extension points for the rest.",
     result:
-      "Time-to-first-token UX matched what users expected from modern AI tools. Long-form generation felt natural, not anxious.",
+      "Generation working from real inbound documents in production. Client trust grew enough that a second system in the consumer space was added to scope on the strength of delivery.",
     lesson:
-      "With AI in the loop, the UI is no longer the slow part. The job is to make slow feel intentional.",
-    stack: ["React", "Next.js", "TypeScript", "Streaming", "AI"],
+      "AI in a workflow changes what 'input' means. The interface is no longer a form — it's whatever the user already has.",
+    stack: ["React", "Node.js", "Express", "Supabase", "AI"],
     architecture: [
-      { label: "Stream Handler", note: "Token-level rendering, stable scroll position, no layout shifts." },
-      { label: "Response Cache", note: "Per-user query cache. Repeated searches feel instant." },
-      { label: "Render Boundaries", note: "Suspense-aligned. The slow part is contained. The rest of the app keeps working." },
+      { label: "Inbox Parser", note: "Reads emails and attachments. Normalizes formats before anything else sees the data." },
+      { label: "Extraction Layer", note: "Structured field extraction from unstructured documents. Confidence scored, not guessed." },
+      { label: "Generation Pipeline", note: "AI-driven proposal assembly. Output is rendered, edited, and shipped from one place." },
     ],
   },
   {
-    id: "enterprise-erp",
+    id: "tls-ems",
     index: "03",
-    title: "Enterprise ERP",
-    category: "Enterprise · ERP",
+    title: "Employee Management System",
+    category: "Enterprise · HR",
     role: "Frontend Developer",
     region: "India",
     context:
-      "ERP for a jewelry manufacturing operation. 600,000+ product SKUs, complex pricing calculations, and an interface that internal teams used every day.",
+      "Internal system for coordinating employees and order workflows. Two-month engagement from kickoff to client sign-off.",
     constraint:
-      "600,000 rows is not a table. It is a rendering problem. Naïve approaches lock the browser.",
+      "Backend owned all business logic — which orders surface, in what priority, in what state. The frontend had to reflect this faithfully without hardcoding a single display assumption.",
     decision:
-      "Virtualized rendering everywhere data exceeded what a screen could hold. Memoization at expensive computation boundaries — not everywhere.",
+      "Backend-driven dynamic rendering. The UI synced and rendered exactly what the backend dictated. Zero parallel business logic on the frontend — easier to audit, harder to drift.",
     tradeoff:
-      "Virtualization adds complexity. Sorting and filtering required careful design. The alternative was a frozen tab.",
+      "The frontend became thin. Display bugs required backend investigation. Simpler to reason about overall; less convenient to debug in isolation.",
     result:
-      "The system handles the full SKU catalog without choking. Internal teams stopped working around the software.",
+      "Delivered in two months. Client signed off on first review with zero rework requests.",
     metric:
-      "600,000+ product SKUs in a virtualized grid — no browser freeze, no pagination workaround.",
+      "Backend-driven rendering shipped in two months — zero rework after first client review.",
     lesson:
-      "Profile first. Memoize second. Always. The places I assumed were slow were rarely the actual problem.",
-    stack: ["React", "TypeScript", "Redux Toolkit", "REST"],
+      "A frontend that trusts the backend completely is easier to maintain than one that mirrors business rules on both sides.",
+    stack: ["React", "JavaScript"],
     architecture: [
-      { label: "Virtual Grid", note: "Renders 30–50 rows out of 600,000. Smooth scroll, stable headers." },
-      { label: "Calc Engine", note: "Memoized at boundaries. Pricing recalculations isolated from row rendering." },
-      { label: "State Layer", note: "Redux Toolkit. Five-developer team. Explicit actions made debugging tractable." },
+      { label: "State Sync", note: "Backend is source of truth. Frontend renders the latest snapshot, no derived state." },
+      { label: "Render Layer", note: "Dynamic component selection based on backend hints. No conditional UI logic on the client." },
     ],
   },
   {
@@ -192,24 +189,51 @@ export const caseStudies: CaseStudy[] = [
     role: "Frontend Developer",
     region: "Israel",
     context:
-      "Learning management system for university students. Concurrency was the design constraint from day one — peak load of 3,000 simultaneous users.",
+      "Learning management system for university students. Concurrency was the design constraint from day one — peak load of 3,000 simultaneous users during exam windows.",
     constraint:
-      "A platform that works for 30 users in staging is not the same platform under 3,000 in production. State and render behavior changes shape under load.",
+      "The exam system needed real-time sync, precise timer logic, and reliable concurrent submission handling. A drifted timer or a missed submission isn't a UX problem here — it's an academic integrity problem.",
     decision:
-      "Route-level code splitting. Lazy-loaded course modules. Render boundaries drawn so a heavy panel could not freeze the rest of the page.",
+      "Server-authoritative timers. Real-time state sync between client and server. Submission handling designed for concurrent load — not retrofitted to it.",
     tradeoff:
-      "More moving parts. Loading states had to be deliberate, not afterthoughts.",
+      "More coordination per tick. Timer authority on the server meant extra round-trips, but it removed an entire class of client-side cheating vectors.",
     result:
-      "The platform held under peak academic season. Student-facing performance stayed predictable.",
+      "The platform held under 3,000 concurrent users through peak academic season. No submissions lost. Student-facing performance stayed predictable.",
     metric:
-      "3,000 concurrent users sustained through peak academic load — no degradation in student-facing response time.",
+      "3,000 concurrent users sustained · zero lost submissions under peak academic load.",
     lesson:
-      "Concurrency reveals architecture. Code that looks fine alone behaves differently at scale.",
-    stack: ["React", "TypeScript", "Redux Toolkit", "REST"],
+      "Concurrency reveals architecture. Code that looks fine alone behaves differently at scale. And for exams — failure is not recoverable.",
+    stack: ["React"],
     architecture: [
-      { label: "Route Split", note: "Each course module loads independently. Faster initial paint." },
-      { label: "Module Boundaries", note: "Heavy panels isolated. One slow widget cannot block the page." },
-      { label: "State Reset", note: "Per-route state cleanup. Memory stays predictable across long sessions." },
+      { label: "Real-time Sync", note: "Client and server state kept in agreement throughout the exam window." },
+      { label: "Timer Authority", note: "Server-side. Client displays, never decides." },
+      { label: "Submission Handler", note: "Designed for concurrent submissions. Queueing, retries, and confirmation built in from day one." },
+    ],
+  },
+  {
+    id: "vk-jewels",
+    index: "05",
+    title: "Jewelry ERP + Distributor Catalogue",
+    category: "Enterprise · ERP",
+    role: "Frontend Developer",
+    region: "India",
+    context:
+      "First production project. ERP for a jewelry manufacturing operation paired with a distributor-facing catalogue site for the same client — two systems, one supply chain.",
+    constraint:
+      "Jewelry design creation required 6 to 9 industry-specific steps. Each step depended on the previous one and carried state forward. A linear form wasn't enough — the workflow had to enforce sequence.",
+    decision:
+      "Built a multi-step design wizard with step-level state isolation and explicit forward/backward navigation. The catalogue site built separately as a clean product browser tuned for distributor use.",
+    tradeoff:
+      "Step isolation added care to shared-state fields. Worth it — each step stayed independently testable, and the workflow stayed legible.",
+    result:
+      "Both systems delivered and live in production. First production role at a professional engineering pace.",
+    metric:
+      "Two systems delivered — ERP design module and distributor catalogue — as first production role.",
+    lesson:
+      "A multi-step workflow is a state machine wearing a form. Design the states first, then the UI.",
+    stack: ["React", "JavaScript"],
+    architecture: [
+      { label: "Step State Machine", note: "Each step owns its state. Transitions explicit, history preserved for back navigation." },
+      { label: "Catalogue Layer", note: "Distributor-facing product browser. Clean separation from ERP internals." },
     ],
   },
 ] as const;

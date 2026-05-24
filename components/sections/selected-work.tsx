@@ -17,9 +17,10 @@ export function SelectedWork() {
       <h2 className="sr-only">Selected work</h2>
       <FadeIn>
         <p className="mb-20 max-w-2xl text-[15px] leading-[1.75] text-[#a3a098] text-pretty">
-          Four production systems. Real constraints, honest tradeoffs, what
-          they taught me. No screenshots, no client logos — engineering
-          decisions speak louder than design covers.
+          Nine systems built. Five documented here — from first frontend role
+          to technical lead. Real constraints, honest tradeoffs, what they
+          taught me. No screenshots, no client logos — engineering decisions
+          speak louder than design covers.
         </p>
       </FadeIn>
 

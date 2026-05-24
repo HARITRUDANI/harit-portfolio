@@ -1,13 +1,12 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const size = { width: 32, height: 32 };
+export const size = { width: 48, height: 48 };
 export const contentType = "image/png";
 
 /**
- * Browser tab favicon.
- * Amber monogram "HR" on near-black, with a faint amber node glow.
- * Designed to read at 16×16, looks crisp at 32×32 and 64×64.
+ * Browser tab favicon — 48×48 meets Google's minimum for search result icons.
+ * Amber monogram "HR" on near-black. Reads clearly at 16×16 scaled down.
  */
 export default function Icon() {
   return new ImageResponse(
@@ -22,10 +21,10 @@ export default function Icon() {
           justifyContent: "center",
           color: "#c8a96e",
           fontWeight: 700,
-          fontSize: 18,
+          fontSize: 26,
           letterSpacing: "-0.05em",
           fontFamily: "system-ui, sans-serif",
-          borderRadius: 6,
+          borderRadius: 8,
           position: "relative",
         }}
       >

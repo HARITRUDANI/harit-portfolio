@@ -502,12 +502,12 @@ export const experience: readonly ExperienceEntry[] = [
  */
 export const howIWork = [
   {
-    label: "Across timezones",
-    body: "Three and a half years of working with teams in Israel, California, and India taught me that engineering is async first. The clearest commit message often matters more than the cleanest code.",
+    label: "Async first",
+    body: "Good engineering survives sleep. Documentation, commit history, and clear decisions scale better than meetings.",
   },
   {
     label: "Full stack, frontend-first",
-    body: "Most of my work lives in the browser, but architecture decisions never stop at the API boundary. The contracts I draw at that boundary shape what the next engineer can confidently change — not just what the current feature needs.",
+    body: "I start at the user boundary and work backward. Frontend decisions become API decisions, API decisions become system decisions.",
   },
   {
     label: "Product before pattern",

@@ -304,10 +304,10 @@ export const thoughtMap = {
 } as const;
 
 export const notesFromProduction: readonly string[] = [
-  "The hardest frontend problems were rarely UI problems. They were state and communication problems wearing UI clothes.",
+  "When you inherit a system, the first instinct is to rewrite. The second instinct — earned painfully — is to understand.",
   "Shipping features is easy. Keeping systems understandable after two years is the harder part of the work.",
   "Performance optimization taught me restraint more than speed. Most of what I removed mattered more than most of what I added.",
-  "Code that works in staging and code that works at scale are not the same code. The difference shows up at the worst time.",
+  "Working across three timezones taught me to write code the way I'd write a letter — assuming the reader won't be in the room to ask questions.",
   "The best architecture decisions look obvious in retrospect. The bad ones do too.",
   "Some systems failed quietly before they failed visibly.",
 ] as const;

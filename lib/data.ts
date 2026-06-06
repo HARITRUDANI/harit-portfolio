@@ -494,12 +494,6 @@ export const experience: readonly ExperienceEntry[] = [
     period: "Sept 2022 — Nov 2022",
     note: "Joined as a trainee. Shipped the first production feature within the first month.",
   },
-  {
-    company: "Zeronsec",
-    role: "Frontend Developer",
-    period: "Jan 2022 — Mar 2022",
-    note: "Early production exposure. Built UI components for live systems.",
-  },
 ] as const;
 
 /**

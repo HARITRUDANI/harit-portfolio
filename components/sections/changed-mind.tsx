@@ -21,7 +21,7 @@ export function ChangedMind() {
         </p>
       </FadeIn>
 
-      <div className="space-y-24 sm:space-y-28">
+      <div className="space-y-20 sm:space-y-24">
         {changedMyMind.map((entry, i) => (
           <motion.div
             key={i}
@@ -51,13 +51,13 @@ export function ChangedMind() {
             </div>
 
             <div className="hidden md:col-span-1 md:flex md:items-center md:justify-center">
-              <span aria-hidden className="text-[#c8a96e]/70">
+              <span aria-hidden className="text-[#c8a96e]/85">
                 →
               </span>
             </div>
 
             <div className="md:col-span-5">
-              <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#c8a96e]/70">
+              <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#c8a96e]/85">
                 Now
               </div>
               <p className="text-[15.5px] leading-[1.7] text-[#f0ece4] text-pretty">

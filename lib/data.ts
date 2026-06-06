@@ -330,9 +330,9 @@ export const changedMyMind: readonly { from: string; to: string }[] = [
 export const currentlyExploring = {
   active: [
     "React Server Components at scale",
-    "Frontend system design for growing teams",
+    "Multi-tenant systems that stay simple",
     "AI-assisted development workflows",
-    "Edge-first Next.js architectures",
+    "Architectures that survive team turnover",
   ],
   unfinished: [
     "Where product thinking should influence architecture decisions — and where it shouldn't.",

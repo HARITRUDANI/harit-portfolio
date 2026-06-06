@@ -53,10 +53,10 @@ export function Exploring() {
                     delay: i * 0.06,
                     ease: EASE,
                   }}
-                  className="group flex items-center justify-between py-5"
+                  className="flex items-center justify-between py-5"
                 >
                   <span className="text-[15px] text-[#f0ece4]">{item}</span>
-                  <span className="font-mono text-[10px] text-[#3a3a3a] transition-colors group-hover:text-[#c8a96e]">
+                  <span aria-hidden className="font-mono text-[10px] text-[#3a3a3a]">
                     →
                   </span>
                 </motion.li>

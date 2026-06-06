@@ -22,13 +22,13 @@ export function Principles() {
         </h2>
       </FadeIn>
 
-      <div className="mt-10 md:mt-24">
+      <div className="mt-8 md:mt-20">
         <FadeIn delay={0.1}>
           <ThoughtMap />
         </FadeIn>
       </div>
 
-      <div className="mt-16 sm:mt-40">
+      <div className="mt-10 sm:mt-32">
         <div className="mb-12 font-mono text-[10px] uppercase tracking-[0.25em] text-[#8a8780]">
           Principles
         </div>

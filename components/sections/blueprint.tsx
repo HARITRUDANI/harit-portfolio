@@ -28,7 +28,7 @@ export function Blueprint() {
     <Section
       id="blueprint"
       domain="state"
-      className="py-8 sm:py-12 md:py-16"
+      className="py-2 sm:py-6 md:py-8"
     >
       <div className="hidden sm:grid sm:grid-cols-12 sm:items-center sm:gap-x-8">
         <div className="sm:col-span-9">
@@ -158,7 +158,7 @@ function BlueprintSVG() {
 
 function BlueprintStack() {
   return (
-    <ol className="relative mx-auto max-w-xs space-y-10">
+    <ol className="relative mx-auto max-w-xs space-y-7">
       <motion.span
         aria-hidden
         initial={{ scaleY: 0 }}

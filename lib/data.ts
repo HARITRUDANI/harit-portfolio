@@ -27,12 +27,11 @@ import {
   siFramer,
   siVite,
   siClaude,
-  siAnthropic,
   siCursor,
   siGithubcopilot,
   siReplit,
-  siGooglegemini,
   siV0,
+  siModelcontextprotocol,
 } from "simple-icons";
 
 /**
@@ -435,14 +434,13 @@ export const stack: readonly StackGroup[] = [
   {
     group: "AI Workflow",
     items: [
-      { name: "Claude", icon: siClaude },
-      { name: "Anthropic", icon: siAnthropic },
-      { name: "OpenAI", icon: siOpenai },
-      { name: "Gemini", icon: siGooglegemini },
+      { name: "Claude Code", icon: siClaude },
       { name: "Cursor", icon: siCursor },
+      { name: "OpenAI API", icon: siOpenai },
       { name: "GitHub Copilot", icon: siGithubcopilot },
-      { name: "Replit", icon: siReplit },
+      { name: "Replit AI", icon: siReplit },
       { name: "v0", icon: siV0 },
+      { name: "MCP", icon: siModelcontextprotocol },
     ],
   },
   {

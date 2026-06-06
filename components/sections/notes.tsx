@@ -22,7 +22,7 @@ export function Notes() {
         </p>
       </FadeIn>
 
-      <div className="mx-auto max-w-3xl space-y-16 sm:space-y-20">
+      <div className="mx-auto max-w-3xl space-y-12 sm:space-y-14">
         {notesFromProduction.map((note, i) => {
           const isScar = i === notesFromProduction.length - 1;
           return (

@@ -73,7 +73,7 @@ function BlueprintSVG() {
             y1={node.y}
             x2={next.x}
             y2={next.y}
-            stroke="rgba(255,255,255,0.18)"
+            stroke="rgba(255,255,255,0.24)"
             strokeWidth={0.35}
             initial={{ pathLength: 0, opacity: 0 }}
             whileInView={{ pathLength: 1, opacity: 1 }}
@@ -102,30 +102,30 @@ function BlueprintSVG() {
           <circle
             cx={node.x}
             cy={node.y}
-            r={1.4}
+            r={1.8}
             fill="none"
-            stroke="rgba(200,169,110,0.55)"
-            strokeWidth={0.22}
+            stroke="rgba(200,169,110,0.7)"
+            strokeWidth={0.24}
             vectorEffect="non-scaling-stroke"
           />
           <text
             x={node.x}
-            y={node.y - 4}
+            y={node.y - 4.2}
             textAnchor="middle"
             className="font-mono"
             fontSize="2.4"
-            fill="#8a8780"
+            fill="#a3a098"
             style={{ letterSpacing: "0.18em", textTransform: "uppercase" }}
           >
             {node.label}
           </text>
           <text
             x={node.x}
-            y={node.y + 5.5}
+            y={node.y + 5.8}
             textAnchor="middle"
             className="font-mono"
             fontSize="1.8"
-            fill="#5a5852"
+            fill="#6f6c64"
             style={{ letterSpacing: "0.05em" }}
           >
             {node.sub}

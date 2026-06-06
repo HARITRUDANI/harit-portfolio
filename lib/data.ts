@@ -490,7 +490,7 @@ export const experience: readonly ExperienceEntry[] = [
     company: "Tuvoc Technologies",
     role: "Trainee",
     period: "Sept 2022 — Nov 2022",
-    note: "Joined as a trainee. Shipped the first production feature within the first month.",
+    note: "Three months of hands-on React training with senior developers. Foundations before moving to live production work.",
   },
 ] as const;
 

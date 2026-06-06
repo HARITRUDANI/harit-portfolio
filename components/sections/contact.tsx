@@ -53,6 +53,12 @@ export function Contact() {
           </FadeIn>
         </address>
       </div>
+      <FadeIn delay={0.5}>
+        <p className="mt-24 font-mono text-[10px] uppercase leading-[1.8] tracking-[0.22em] text-[#8a8780] text-pretty">
+          Senior Software Engineer · React · Next.js · TypeScript · Production
+          Systems · AI Products
+        </p>
+      </FadeIn>
     </Section>
   );
 }

@@ -19,7 +19,7 @@ export function WhatYouGet() {
       id="what-you-get"
       index="09"
       label="how i work"
-      domain="interaction"
+      domain="longevity"
     >
       <FadeIn>
         <h2 className="max-w-3xl font-display text-[26px] font-light leading-[1.35] tracking-[-0.01em] text-[#f0ece4] text-balance sm:text-[30px] md:text-[34px]">

@@ -252,28 +252,28 @@ export const principles: readonly Principle[] = [
     title: "Performance is a feature",
     surface: "Performance is a feature.",
     depth: "Not a phase after launch. A constraint I design around from the first component.",
-    core: "I learned this on a platform that worked perfectly in staging and collapsed under real traffic. The code was fine. The architecture wasn't.",
+    core: "I learned this while supporting a university platform serving thousands of concurrent users. The code passed every review. Under real traffic, the bottleneck wasn't the implementation — it was the assumptions behind it.",
   },
   {
     index: "02",
     title: "State should match reality",
     surface: "State complexity should match business complexity — nothing more.",
     depth: "Every atom of state that doesn't map to a business concept is future debt.",
-    core: "I used to add state proactively, anticipating needs. Most of it became cleanup later.",
+    core: "On an early ERP project, I added state for features I thought we'd need. Two months later, most of it was cleanup — and the parts I'd skipped were exactly what production asked for.",
   },
   {
     index: "03",
     title: "Delete-ability is a virtue",
     surface: "The best component is the one your team can delete safely.",
     depth: "Reusability without clear contracts becomes a graph of fear. Nobody touches it.",
-    core: "I once built an abstraction nine teammates depended on. Removing it took three months. I now design for removal.",
+    core: "I once built an abstraction the team came to rely on. When requirements shifted, removing it took longer than building it. Now I design every component to be deleted.",
   },
   {
     index: "04",
     title: "Architecture is communication",
     surface: "Architecture decisions are really communication decisions.",
     depth: "The audience isn't the compiler. It's the engineer reading your code two years from now.",
-    core: "After enough production incidents, I stopped optimizing for clever and started optimizing for legible.",
+    core: "After enough late-night deployments and inherited unknowns, I stopped optimizing for clever code and started optimizing for code that explains itself to the engineer reading it at 4 AM.",
   },
 ] as const;
 
@@ -286,8 +286,8 @@ export const thoughtMap = {
     { id: "state", label: "State", x: 80, y: 45, note: "Maps to business concepts. Nothing more, nothing speculative." },
     { id: "ux", label: "UX", x: 35, y: 75, note: "Felt through what doesn't happen — no flicker, no lag, no surprise." },
     { id: "scalability", label: "Scalability", x: 65, y: 75, note: "How the system behaves at 10x. Often a re-render problem in disguise." },
-    { id: "communication", label: "Communication", x: 15, y: 92, note: "With clients across timezones. With future maintainers. With yourself in six months." },
-    { id: "interaction", label: "Interaction", x: 85, y: 92, note: "What the user is actually doing — usually different from what the ticket assumes." },
+    { id: "communication", label: "Communication", x: 15, y: 86, note: "With clients across timezones. With future maintainers. With yourself in six months." },
+    { id: "longevity", label: "Longevity", x: 85, y: 86, note: "Systems that stay alive past the first release. The hard part is not shipping — it's still shipping two years in." },
   ],
   edges: [
     ["performance", "architecture"],
@@ -296,9 +296,9 @@ export const thoughtMap = {
     ["architecture", "communication"],
     ["state", "ux"],
     ["state", "scalability"],
-    ["ux", "interaction"],
+    ["ux", "longevity"],
     ["scalability", "performance"],
-    ["communication", "interaction"],
+    ["communication", "longevity"],
     ["architecture", "scalability"],
   ] as const,
 } as const;
@@ -507,11 +507,11 @@ export const sectionDomainMap = {
   notes: "communication",
   blueprint: "state",
   "changed-mind": "architecture",
-  exploring: "interaction",
+  exploring: "longevity",
   global: "communication",
   stack: "performance",
   experience: "architecture",
-  "what-you-get": "interaction",
+  "what-you-get": "longevity",
 } as const;
 
 export type DomainId =
@@ -521,4 +521,4 @@ export type DomainId =
   | "ux"
   | "scalability"
   | "communication"
-  | "interaction";
+  | "longevity";

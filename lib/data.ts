@@ -314,16 +314,16 @@ export const notesFromProduction: readonly string[] = [
 
 export const changedMyMind: readonly { from: string; to: string }[] = [
   {
-    from: "I used to build abstractions for flexibility I was certain would come.",
-    to: "Maintaining them for eighteen months taught me that speculative generality is just technical debt with better intentions.",
+    from: "I used to build shared utilities the moment I saw a second use case. Clean interface — good abstraction.",
+    to: "The abstraction that cost the most wasn't wrong. It was just used by enough engineers that removing it took months. Replaceability matters more than reusability. I design for deletion now.",
   },
   {
-    from: "I once thought managing every possible state meant having control over the system.",
-    to: "What it actually produced was dozens of edge cases nobody remembered designing for.",
+    from: "I thought state management was a frontend problem — something you solved by choosing the right store.",
+    to: "The worst state bugs I've debugged had nothing to do with the store. They were synchronization gaps between what the server knew and what the client assumed. The state model you pick is a statement about where you trust the server — and most of the time, that conversation hasn't happened yet.",
   },
   {
-    from: "I used to treat performance as cleanup work after features shipped.",
-    to: "The systems that held under real load were the ones where performance shaped the design from the start — not a phase applied at the end.",
+    from: "I used to measure performance by what I could control: bundle size, render count, query time.",
+    to: "The system that held under 3,000 concurrent users held because concurrency shaped the architecture from the start. Performance constraints that arrive late don't just slow you down — they constrain what you're allowed to redesign.",
   },
 ] as const;
 
@@ -447,14 +447,14 @@ export const experience: readonly ExperienceEntry[] = [
     company: "Tuvoc Technologies",
     role: "Senior Software Engineer",
     period: "Nov 2025 — Present",
-    note: "Leading full-stack engineering on international products. Israel, California, India.",
+    note: "Leading full-stack engineering across Israel, California, and India. The decisions made here — what gets abstracted, where contracts live, how state flows — are the ones other engineers on the system build on.",
     current: true,
   },
   {
     company: "Tuvoc Technologies",
     role: "Software Engineer",
     period: "Dec 2022 — Oct 2025",
-    note: "Built and shipped production systems across LMS, ERP, AI SaaS, and consumer platforms — each one living under real usage over years.",
+    note: "Built and shipped production systems across LMS, ERP, AI SaaS, and consumer platforms. Became the engineer called when a deployment decision affected everyone — including designing the pre-production environment that protected a live migration across 5.5M+ users.",
   },
   {
     company: "Tuvoc Technologies",

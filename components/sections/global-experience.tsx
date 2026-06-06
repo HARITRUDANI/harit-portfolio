@@ -83,7 +83,7 @@ export function GlobalExperience() {
       </div>
 
       <FadeIn delay={0.4}>
-        <p className="mt-20 max-w-2xl font-mono text-[11px] uppercase leading-[1.8] tracking-[0.18em] text-[#8a8780]">
+        <p className="mt-20 max-w-2xl font-mono text-[11px] uppercase leading-[1.8] tracking-[0.18em] text-[#a3a098]">
           Async-first · Cross-timezone · International delivery standards
         </p>
       </FadeIn>

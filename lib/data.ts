@@ -350,33 +350,33 @@ export const globalExperience = [
     region: "Israel",
     count: 4,
     description:
-      "Consumer platforms and university-grade systems. Long-running engagements, complex admin.",
+      "Long-running engagements. Consumer scale and university platforms — stewardship across years, not handoffs.",
     systems: [
-      { name: "Consumer Platform", note: "Coupons & deals · complex admin" },
-      { name: "Learning Management", note: "Universities · 3,000 concurrent" },
-      { name: "R&D Engineering", note: "Technical product work" },
-      { name: "Employee Management", note: "HR tooling" },
+      { name: "Consumer Coupon Platform", note: "5.5M+ redemptions" },
+      { name: "Provider Campaign Portal", note: "CRM · 156k+ consumers" },
+      { name: "B2B Multi-tenant System", note: "AI-layered · in production" },
+      { name: "University Learning Platform", note: "3,000 concurrent · exam system" },
     ],
   },
   {
     region: "California, USA",
-    count: 3,
+    count: 2,
     description:
-      "Full Stack Lead on all three. AI SaaS, HR risk, regulated e-commerce.",
+      "Full Stack Developer on both. AI features layered on B2B SaaS and regulated e-commerce.",
     systems: [
-      { name: "AI Proposal Intelligence", note: "B2B SaaS · streaming AI" },
-      { name: "HR Risk Platform", note: "PEO services" },
-      { name: "Regulated E-commerce", note: "Cannabis delivery" },
+      { name: "AI Proposal Intelligence", note: "B2B SaaS · PEO services" },
+      { name: "Regulated E-commerce", note: "Cannabis delivery · POS + admin" },
     ],
   },
   {
     region: "India",
-    count: 2,
+    count: 3,
     description:
-      "Enterprise scale. 600,000+ SKUs. Internal teams that depend on it daily.",
+      "First production roles. Enterprise systems serving internal teams across the supply chain.",
     systems: [
       { name: "Enterprise ERP", note: "Jewelry · 600,000+ SKUs" },
-      { name: "Product Catalogue", note: "Structured data operations" },
+      { name: "Distributor Catalogue", note: "Structured product data" },
+      { name: "Employee Management", note: "HR + order coordination" },
     ],
   },
 ] as const;

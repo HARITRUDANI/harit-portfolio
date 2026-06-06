@@ -18,9 +18,9 @@ export function Contact() {
           </FadeIn>
           <FadeIn delay={0.15}>
             <p className="mt-10 max-w-[410px] text-[15px] leading-[1.75] text-[#a3a098] text-pretty">
-              I&rsquo;m open to senior frontend and full-stack roles, particularly
-              with teams shipping product across timezones. The kinds of
-              systems that need to keep working two years from now.
+              Open to senior roles with teams shipping production across
+              timezones. The systems that have to keep working two years
+              from now.
             </p>
           </FadeIn>
         </div>

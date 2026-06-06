@@ -17,8 +17,9 @@ export function Contact() {
             </h2>
           </FadeIn>
           <FadeIn delay={0.15}>
-            <p className="mt-10 max-w-[410px] text-[15px] leading-[1.75] text-[#a3a098] text-pretty">
-              Open to senior roles with teams shipping production across
+            <p className="mt-10 max-w-[480px] text-[15px] leading-[1.75] text-[#a3a098] text-pretty">
+              Open to Senior Frontend, Frontend Systems, and Full Stack
+              Engineering roles with teams shipping production across
               timezones. The systems that have to keep working two years
               from now.
             </p>

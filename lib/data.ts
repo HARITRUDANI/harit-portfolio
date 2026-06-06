@@ -29,7 +29,6 @@ import {
   siClaude,
   siCursor,
   siGithubcopilot,
-  siReplit,
   siV0,
   siModelcontextprotocol,
 } from "simple-icons";
@@ -349,8 +348,8 @@ export const changedMyMind: readonly { from: string; to: string }[] = [
 export const currentlyExploring = {
   active: [
     "React Server Components at scale",
-    "Multi-tenant systems that stay simple",
-    "AI-assisted development workflows",
+    "Multi-tenant architecture without tenant-specific code paths",
+    "AI-assisted engineering workflows beyond autocomplete",
     "Architectures that survive team turnover",
   ],
   unfinished: [
@@ -438,7 +437,6 @@ export const stack: readonly StackGroup[] = [
       { name: "Cursor", icon: siCursor },
       { name: "OpenAI API", icon: siOpenai },
       { name: "GitHub Copilot", icon: siGithubcopilot },
-      { name: "Replit AI", icon: siReplit },
       { name: "v0", icon: siV0 },
       { name: "MCP", icon: siModelcontextprotocol },
     ],

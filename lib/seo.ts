@@ -17,7 +17,7 @@ export const SITE_TITLE =
 export const SITE_TITLE_TEMPLATE = "%s — Harit Rudani";
 
 export const SITE_DESCRIPTION =
-  "Senior Software Engineer building scalable systems for international teams. React, Next.js, TypeScript. Israel · California · India.";
+  "Senior Software Engineer building scalable frontend systems and production architecture. React, Next.js, TypeScript. Israel · California · Ahmedabad.";
 
 export const SITE_DESCRIPTION_SHORT =
   "Senior Software Engineer building scalable systems and production-grade products across international teams.";
@@ -34,6 +34,10 @@ export const SITE_KEYWORDS = [
   "Frontend Architect",
   "Product Engineer",
   "Frontend Performance Engineer",
+  "React.js Specialist",
+  "Full Stack JavaScript Engineer",
+  "Production Frontend Engineer",
+  "Distributed Team Engineer",
   // Stack
   "React Engineer",
   "Next.js Engineer",
@@ -41,14 +45,28 @@ export const SITE_KEYWORDS = [
   "Node.js Engineer",
   // Capabilities
   "Scalable Frontend Systems",
+  "Scalable Web Applications",
   "Frontend System Design",
+  "Frontend Architecture",
+  "System Design Frontend",
   "React Architecture",
   "Frontend Performance Optimization",
+  "React Performance Optimization",
   "Maintainable Frontend Systems",
   "Production-grade Frontend Engineering",
+  "Large Scale Frontend Systems",
+  "Enterprise Frontend Systems",
+  "Production UI Systems",
+  "Complex State Management",
+  "Frontend Infrastructure",
+  "Design Systems Engineering",
   "AI-Assisted Development Workflows",
   // Reach
+  "Remote React Developer",
   "Frontend Engineer India",
+  "Software Engineer India",
+  "React Developer Ahmedabad",
+  "Frontend Developer India",
   "International Frontend Engineer",
   "Remote React Engineer",
 ];
@@ -79,19 +97,38 @@ export const PERSON = {
     "TypeScript",
     "JavaScript",
     "Node.js",
+    "Redux",
+    "Tailwind CSS",
+    "PostgreSQL",
+    "MongoDB",
+    "Docker",
+    "Express",
+    "Supabase",
     "Frontend Architecture",
     "Frontend System Design",
     "React Architecture",
     "Frontend Performance Optimization",
     "Scalable Frontend Systems",
+    "Large Scale Frontend Systems",
+    "Enterprise Frontend Systems",
+    "State Management",
+    "Complex State Management",
     "Maintainable Frontend Systems",
     "Production-grade Frontend Engineering",
     "Product Engineering",
     "Full Stack Development",
     "AI-Assisted Development",
+    "Cross-timezone Engineering",
+    "Distributed Systems Engineering",
     "Engineering Systems Thinking",
-    "Modern Frontend Infrastructure",
   ],
+  occupation: {
+    name: "Senior Software Engineer",
+    description:
+      "Architecting and shipping scalable frontend systems and full-stack applications for international engineering teams",
+    skills:
+      "React, Next.js, TypeScript, Node.js, Redux, PostgreSQL, Frontend Architecture, System Design, Full Stack Development",
+  },
   sameAs: ["https://www.linkedin.com/in/harit-rudani"],
 } as const;
 

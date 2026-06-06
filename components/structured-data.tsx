@@ -38,6 +38,13 @@ export function StructuredData() {
       addressCountry: PERSON.address.country,
     },
     knowsAbout: PERSON.knowsAbout,
+    knowsLanguage: { "@type": "Language", "name": "English" },
+    hasOccupation: {
+      "@type": "Occupation",
+      name: PERSON.occupation.name,
+      description: PERSON.occupation.description,
+      skills: PERSON.occupation.skills,
+    },
     sameAs: PERSON.sameAs,
   };
 
@@ -59,16 +66,48 @@ export function StructuredData() {
     "@id": `${SITE_URL}/#service`,
     name: `${PERSON.name} — Senior Software Engineering`,
     description:
-      "Senior frontend and full-stack engineering for production systems. Available for global remote opportunities.",
+      "Senior frontend and full-stack engineering for international production systems. Scalable frontend architecture, React systems, and distributed team delivery. Available for global remote opportunities.",
     provider: { "@id": `${SITE_URL}/#person` },
-    areaServed: ["Worldwide"],
+    areaServed: [
+      { "@type": "Country", name: "India" },
+      { "@type": "Country", name: "Israel" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "GeoShape", description: "Worldwide remote" },
+    ],
     serviceType: [
       "Frontend Engineering",
       "Full Stack Development",
       "Frontend Architecture",
+      "React Development",
+      "Next.js Development",
+      "TypeScript Engineering",
+      "Frontend System Design",
+      "Performance Optimization",
       "Technical Leadership",
     ],
+    availableLanguage: { "@type": "Language", name: "English" },
     url: SITE_URL,
+  };
+
+  const portfolio = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": `${SITE_URL}/#portfolio`,
+    name: "Harit Rudani — Engineering Portfolio",
+    description:
+      "Portfolio of senior frontend and full-stack engineering work across consumer platforms, AI SaaS, enterprise ERP, and educational technology — shipped for teams in Israel, California, and India.",
+    url: SITE_URL,
+    author: { "@id": `${SITE_URL}/#person` },
+    inLanguage: "en",
+    keywords:
+      "Senior Software Engineer, React, Next.js, TypeScript, Frontend Architecture, Scalable Systems, Full Stack Development, Frontend System Design",
+    about: [
+      { "@type": "Thing", name: "Frontend Architecture" },
+      { "@type": "Thing", name: "Scalable Web Applications" },
+      { "@type": "Thing", name: "React Engineering" },
+      { "@type": "Thing", name: "Production Systems" },
+      { "@type": "Thing", name: "Full Stack Development" },
+    ],
   };
 
   return (
@@ -84,6 +123,10 @@ export function StructuredData() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalService) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolio) }}
       />
     </>
   );

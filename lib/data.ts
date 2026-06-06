@@ -486,7 +486,7 @@ export const experience: readonly ExperienceEntry[] = [
     company: "Tuvoc Technologies",
     role: "Software Engineer",
     period: "Dec 2022 — Oct 2025",
-    note: "Built and shipped production systems across LMS, ERP, AI SaaS, and consumer platforms. Became the engineer called when a deployment decision affected everyone — including designing the pre-production environment that protected a live migration across 5.5M+ users.",
+    note: "Designed the pre-production environment that bridged a silent staging/production divergence — zero impact on 156k live consumers and 5.5M+ redemptions. Built and shipped production systems across LMS, ERP, AI SaaS, and consumer platforms. Became the engineer called when a deployment decision affected everyone.",
   },
   {
     company: "Tuvoc Technologies",

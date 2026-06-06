@@ -17,7 +17,7 @@ export function Experience() {
       <FadeIn>
         <h2 className="max-w-2xl font-display text-[24px] font-light leading-[1.4] text-[#f0ece4] text-balance sm:text-[28px]">
           One company.
-          <span className="text-[#a3a098]"> Four roles. Nine systems. Three countries.</span>
+          <span className="text-[#a3a098]"> Trainee to Senior Engineer. Nine production systems. Three countries.</span>
         </h2>
         <p className="mt-5 max-w-xl text-[14px] leading-[1.75] text-[#8a8780] text-pretty">
           Most engineers change companies for variety. I changed domains — LMS, consumer, enterprise, AI. The scope kept expanding. So did the depth.

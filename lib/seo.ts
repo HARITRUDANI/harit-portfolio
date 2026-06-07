@@ -157,7 +157,7 @@ export const PERSON = {
     skills:
       "React, Next.js, TypeScript, Node.js, Redux, PostgreSQL, Frontend Architecture, System Design, Full Stack Development",
   },
-  sameAs: ["https://www.linkedin.com/in/harit-rudani"],
+  sameAs: ["https://www.linkedin.com/in/haritrudani"],
 } as const;
 
 export const OG_IMAGE = {

@@ -61,8 +61,8 @@ export const person = {
   title: "Senior Software Engineer",
   location: "Ahmedabad, India",
   email: "haritrudani23@gmail.com",
-  linkedin: "https://www.linkedin.com/in/harit-rudani",
-  linkedinHandle: "in/harit-rudani",
+  linkedin: "https://www.linkedin.com/in/haritrudani",
+  linkedinHandle: "in/haritrudani",
   available: true,
   get lastUpdated() {
     return lastUpdatedLabel();

@@ -7,7 +7,7 @@
  */
 
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.haritrudani.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://haritrudani.com";
 
 export const SITE_NAME = "Harit Rudani";
 

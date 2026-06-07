@@ -25,7 +25,7 @@ export function ThoughtMap() {
   );
 
   return (
-    <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-start lg:gap-x-16">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start lg:gap-x-16">
       <div className="lg:col-span-7">
         <div className="relative aspect-[5/4] w-full">
           <svg

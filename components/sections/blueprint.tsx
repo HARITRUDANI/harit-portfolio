@@ -43,7 +43,7 @@ export function Blueprint() {
 
       <div className="sm:hidden">
         <BlueprintStack />
-        <p className="mx-auto mt-12 max-w-[22ch] text-center text-[13.5px] leading-[1.75] text-[#8a8780] italic text-pretty">
+        <p className="mx-auto mt-8 max-w-[22ch] text-center text-[13.5px] leading-[1.75] text-[#8a8780] italic text-pretty">
           Every visible change is the tail of an invisible flow.
         </p>
       </div>

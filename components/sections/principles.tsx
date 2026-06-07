@@ -28,7 +28,7 @@ export function Principles() {
         </FadeIn>
       </div>
 
-      <div className="mt-10 sm:mt-32">
+      <div className="mt-6 sm:mt-32">
         <div className="mb-12 font-mono text-[10px] uppercase tracking-[0.25em] text-[#8a8780]">
           Principles
         </div>
@@ -51,7 +51,7 @@ function PrincipleRow({ principle: p, index }: { principle: Principle; index: nu
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-15% 0px" }}
       transition={{ duration: 0.7, delay: index * 0.08, ease: EASE }}
-      className="group relative grid grid-cols-1 gap-y-3 border-b border-white/[0.06] py-10 md:grid-cols-12 md:gap-x-10 md:py-14"
+      className="group relative grid grid-cols-1 gap-y-3 border-b border-white/[0.06] py-7 md:grid-cols-12 md:gap-x-10 md:py-14"
     >
       {/* hover amber trace */}
       <span

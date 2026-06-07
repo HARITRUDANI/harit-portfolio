@@ -68,7 +68,7 @@ export function Pause({ label, primary, secondary, compact = false }: PauseProps
     <section
       ref={ref}
       aria-label={label}
-      className={`relative flex w-full items-center justify-center overflow-hidden py-14 sm:py-20 sm:min-h-[55svh] md:min-h-[68svh] ${compact ? "min-h-[30svh]" : "min-h-[38svh]"}`}
+      className={`relative flex w-full items-center justify-center overflow-hidden py-10 sm:py-20 sm:min-h-[55svh] md:min-h-[68svh] ${compact ? "min-h-[22svh]" : "min-h-[28svh]"}`}
     >
       <div
         aria-hidden

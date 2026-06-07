@@ -45,6 +45,14 @@ export function Contact() {
             />
           </FadeIn>
           <FadeIn delay={0.4}>
+            <ContactLink
+              label="CV"
+              href="/cv_fulltime.pdf"
+              text="Download CV"
+              external
+            />
+          </FadeIn>
+          <FadeIn delay={0.5}>
             <div className="border-l border-white/[0.08] pl-5">
               <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#8a8780]">
                 Based in
@@ -54,7 +62,7 @@ export function Contact() {
           </FadeIn>
         </address>
       </div>
-      <FadeIn delay={0.5}>
+      <FadeIn delay={0.6}>
         <p className="mt-24 font-mono text-[10px] uppercase leading-[1.8] tracking-[0.22em] text-[#8a8780] text-pretty">
           Senior Software Engineer · React · Next.js · TypeScript · Production
           Systems · AI Products

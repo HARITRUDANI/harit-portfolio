@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1584px;
+    height: 396px;
+    background: #080808;
+    overflow: hidden;
+    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  /* Radial glow on right */
+  .glow {
+    position: absolute;
+    right: -60px; top: -120px;
+    width: 680px; height: 680px;
+    background: radial-gradient(ellipse 55% 50% at 65% 30%, rgba(200,169,110,0.08), transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+  .wrapper {
+    width: 1584px; height: 396px;
+    display: flex; align-items: stretch;
+    position: relative; z-index: 1;
+  }
+
+  /* LEFT: Topology — 62% width */
+  .topology {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  .topology svg {
+    width: 100%; height: 100%;
+  }
+
+  /* Vertical separator */
+  .sep {
+    width: 1px;
+    background: linear-gradient(to bottom, transparent 10%, rgba(200,169,110,0.18) 40%, rgba(200,169,110,0.18) 60%, transparent 90%);
+    flex-shrink: 0;
+  }
+
+  /* RIGHT: Identity — 38% width */
+  .identity {
+    width: 530px;
+    flex-shrink: 0;
+    padding: 0 68px 0 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logo-mark {
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #c8a96e;
+    margin-bottom: 16px;
+    opacity: 0.85;
+  }
+  .logo-mark span { color: #3a3a3a; margin: 0 5px; }
+  .name {
+    font-size: 52px;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: #f0ece4;
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+  .title {
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #8a8780;
+    margin-bottom: 20px;
+  }
+  .divider {
+    width: 40px; height: 1px;
+    background: rgba(200,169,110,0.4);
+    margin-bottom: 18px;
+  }
+  .tagline {
+    font-size: 16px;
+    font-weight: 300;
+    color: #a3a098;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+  }
+  .tagline strong { color: #c8a96e; font-weight: 300; }
+  .url {
+    margin-top: 16px;
+    font-family: monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #5a5854;
+  }
+  .border-bottom {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(to right, transparent, rgba(200,169,110,0.12) 40%, rgba(200,169,110,0.12) 60%, transparent);
+    z-index: 2;
+  }
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="border-bottom"></div>
+<div class="wrapper">
+
+  <!-- TOPOLOGY — nodes shifted UP so profile photo doesn't cover labels -->
+  <div class="topology">
+    <svg viewBox="0 0 980 396" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- EDGES -->
+      <line x1="490" y1="60"  x2="200" y2="155" stroke="rgba(200,169,110,0.18)" stroke-width="1"/>
+      <line x1="490" y1="60"  x2="780" y2="155" stroke="rgba(200,169,110,0.18)" stroke-width="1"/>
+      <line x1="200" y1="155" x2="780" y2="155" stroke="rgba(200,169,110,0.15)" stroke-width="1"/>
+      <line x1="200" y1="155" x2="120" y2="285" stroke="rgba(200,169,110,0.18)" stroke-width="1"/>
+      <line x1="780" y1="155" x2="360" y2="272" stroke="rgba(200,169,110,0.15)" stroke-width="1"/>
+      <line x1="780" y1="155" x2="630" y2="272" stroke="rgba(200,169,110,0.15)" stroke-width="1"/>
+      <line x1="630" y1="272" x2="490" y2="60"  stroke="rgba(200,169,110,0.12)" stroke-width="1"/>
+      <line x1="200" y1="155" x2="630" y2="272" stroke="rgba(200,169,110,0.12)" stroke-width="1"/>
+      <line x1="120" y1="285" x2="840" y2="285" stroke="rgba(200,169,110,0.18)" stroke-width="1"/>
+      <line x1="360" y1="272" x2="840" y2="285" stroke="rgba(200,169,110,0.14)" stroke-width="1"/>
+
+      <!-- PERFORMANCE — top center -->
+      <circle cx="490" cy="60" r="10" fill="none" stroke="rgba(200,169,110,0.1)" stroke-width="1"/>
+      <circle cx="490" cy="60" r="5.5" fill="none" stroke="rgba(200,169,110,0.6)" stroke-width="1.4"/>
+      <circle cx="490" cy="60" r="2.2" fill="rgba(240,236,228,0.9)"/>
+      <text x="490" y="43" text-anchor="middle" font-family="monospace" font-size="14" fill="#d4d0c8" letter-spacing="1.8" font-weight="500" style="text-transform:uppercase">PERFORMANCE</text>
+
+      <!-- ARCHITECTURE — left mid -->
+      <circle cx="200" cy="155" r="5.5" fill="none" stroke="rgba(200,169,110,0.58)" stroke-width="1.4"/>
+      <circle cx="200" cy="155" r="2.2" fill="rgba(240,236,228,0.9)"/>
+      <text x="200" y="138" text-anchor="middle" font-family="monospace" font-size="14" fill="#d4d0c8" letter-spacing="1.8" font-weight="500" style="text-transform:uppercase">ARCHITECTURE</text>
+
+      <!-- STATE — right mid -->
+      <circle cx="780" cy="155" r="5.5" fill="none" stroke="rgba(200,169,110,0.58)" stroke-width="1.4"/>
+      <circle cx="780" cy="155" r="2.2" fill="rgba(240,236,228,0.9)"/>
+      <text x="780" y="138" text-anchor="middle" font-family="monospace" font-size="14" fill="#d4d0c8" letter-spacing="1.8" font-weight="500" style="text-transform:uppercase">STATE</text>
+
+      <!-- UX — lower left-center -->
+      <circle cx="360" cy="272" r="5.5" fill="none" stroke="rgba(200,169,110,0.52)" stroke-width="1.4"/>
+      <circle cx="360" cy="272" r="2.2" fill="rgba(240,236,228,0.85)"/>
+      <text x="360" y="295" text-anchor="middle" font-family="monospace" font-size="14" fill="#d4d0c8" letter-spacing="1.8" font-weight="500" style="text-transform:uppercase">UX</text>
+
+      <!-- SCALABILITY — lower center-right -->
+      <circle cx="630" cy="272" r="5.5" fill="none" stroke="rgba(200,169,110,0.52)" stroke-width="1.4"/>
+      <circle cx="630" cy="272" r="2.2" fill="rgba(240,236,228,0.85)"/>
+      <text x="630" y="295" text-anchor="middle" font-family="monospace" font-size="14" fill="#d4d0c8" letter-spacing="1.8" font-weight="500" style="text-transform:uppercase">SCALABILITY</text>
+
+      <!-- COMMUNICATION — far left, shifted up to avoid photo -->
+      <circle cx="120" cy="285" r="5.5" fill="none" stroke="rgba(200,169,110,0.52)" stroke-width="1.4"/>
+      <circle cx="120" cy="285" r="2.2" fill="rgba(240,236,228,0.85)"/>
+      <text x="120" y="268" text-anchor="middle" font-family="monospace" font-size="14" fill="#d4d0c8" letter-spacing="1.8" font-weight="500" style="text-transform:uppercase">COMMUNICATION</text>
+
+      <!-- LONGEVITY — far right, AMBER (active) -->
+      <circle cx="840" cy="285" r="7" fill="rgba(200,169,110,0.1)" stroke="rgba(200,169,110,0.85)" stroke-width="1.5"/>
+      <circle cx="840" cy="285" r="2.6" fill="rgb(200,169,110)"/>
+      <text x="840" y="268" text-anchor="middle" font-family="monospace" font-size="14" fill="rgba(200,169,110,1)" letter-spacing="1.8" font-weight="500" style="text-transform:uppercase">LONGEVITY</text>
+
+    </svg>
+  </div>
+
+  <!-- VERTICAL SEPARATOR -->
+  <div class="sep"></div>
+
+  <!-- IDENTITY -->
+  <div class="identity">
+    <div class="logo-mark">HR <span>·</span> Harit Rudani</div>
+    <div class="name">Harit Rudani</div>
+    <div class="title">Senior Software Engineer</div>
+    <div class="divider"></div>
+    <div class="tagline">
+      Software changes fast.<br>
+      <strong>Clear systems last.</strong>
+    </div>
+    <div class="url">haritrudani.com</div>
+  </div>
+</div>
+</body>
+</html>

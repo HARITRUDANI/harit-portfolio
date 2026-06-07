@@ -7,7 +7,7 @@
  */
 
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://haritrudani.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.haritrudani.com";
 
 export const SITE_NAME = "Harit Rudani";
 
@@ -29,7 +29,11 @@ export const SITE_KEYWORDS = [
   "Harit Rudani",
   "Senior Software Engineer",
   "Senior Frontend Engineer",
+  "Senior Frontend Developer",
+  "Senior React Developer",
+  "Senior JavaScript Engineer",
   "Full Stack Engineer",
+  "Full Stack Developer",
   "Frontend Systems Engineer",
   "Frontend Architect",
   "Product Engineer",
@@ -38,11 +42,30 @@ export const SITE_KEYWORDS = [
   "Full Stack JavaScript Engineer",
   "Production Frontend Engineer",
   "Distributed Team Engineer",
-  // Stack
+  "Technical Lead Frontend",
+  "Frontend Technical Lead",
+  "Lead Frontend Engineer",
+  // Stack — primary
   "React Engineer",
+  "React Developer",
+  "React.js Developer",
   "Next.js Engineer",
+  "Next.js Developer",
   "TypeScript Engineer",
+  "TypeScript Developer",
+  "JavaScript Engineer",
+  "JavaScript Developer",
   "Node.js Engineer",
+  "Node.js Developer",
+  // Stack — secondary
+  "Redux Developer",
+  "Tailwind CSS Developer",
+  "PostgreSQL Developer",
+  "MongoDB Developer",
+  "Supabase Developer",
+  "Express.js Developer",
+  "REST API Developer",
+  "GraphQL Developer",
   // Capabilities
   "Scalable Frontend Systems",
   "Scalable Web Applications",
@@ -52,6 +75,9 @@ export const SITE_KEYWORDS = [
   "React Architecture",
   "Frontend Performance Optimization",
   "React Performance Optimization",
+  "Core Web Vitals Optimization",
+  "Web Performance Optimization",
+  "Lighthouse Performance",
   "Maintainable Frontend Systems",
   "Production-grade Frontend Engineering",
   "Large Scale Frontend Systems",
@@ -60,6 +86,21 @@ export const SITE_KEYWORDS = [
   "Complex State Management",
   "Frontend Infrastructure",
   "Design Systems Engineering",
+  "Component Library Development",
+  "Server-Side Rendering",
+  "Static Site Generation",
+  "Progressive Web App",
+  "Micro-frontend Architecture",
+  "Accessibility Engineering",
+  "WCAG Compliance",
+  // Industry verticals (matches actual projects)
+  "EdTech Frontend Engineer",
+  "FinTech Frontend Engineer",
+  "SaaS Frontend Engineer",
+  "B2B SaaS Engineer",
+  "Enterprise ERP Frontend",
+  "Consumer Platform Engineering",
+  "E-commerce Frontend Engineer",
   // AI & modern engineering
   "AI Engineering",
   "AI-Assisted Development",
@@ -76,14 +117,30 @@ export const SITE_KEYWORDS = [
   "Prompt Engineering",
   "Anthropic Claude",
   "OpenAI API",
-  // Reach
+  "Vibe Coding",
+  // Hiring intent
+  "Hire Senior React Developer",
+  "Hire Frontend Engineer India",
+  "Hire React Developer India",
+  "Hire Full Stack Developer India",
+  "Available for Remote Work",
+  "Remote Software Engineer India",
+  "Freelance React Developer",
+  "Contract Frontend Engineer",
+  // Reach — location
   "Remote React Developer",
   "Frontend Engineer India",
   "Software Engineer India",
   "React Developer Ahmedabad",
   "Frontend Developer India",
+  "Frontend Engineer Ahmedabad",
+  "Software Engineer Ahmedabad",
+  "Frontend Engineer Gujarat",
+  "Software Engineer Gujarat",
   "International Frontend Engineer",
   "Remote React Engineer",
+  "Frontend Engineer Israel",
+  "Frontend Engineer California",
 ];
 
 export const PERSON = {

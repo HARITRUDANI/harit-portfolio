@@ -76,7 +76,7 @@ export const stats = [
     },
     label: "in production",
   },
-  { value: "5 systems", label: "shipped" },
+  { value: "9 systems", label: "shipped" },
   { value: "5.5M+ redemptions", label: "delivered" },
   { value: "3 countries", label: "Israel · California · India" },
 ] as const;
@@ -489,7 +489,7 @@ export const experience: readonly ExperienceEntry[] = [
   {
     company: "Tuvoc Technologies",
     role: "Trainee",
-    period: "Sept 2022 — Nov 2022",
+    period: "Sep 2022 — Nov 2022",
     note: "Three months of hands-on React training with senior developers. Foundations before moving to live production work.",
   },
 ] as const;

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Providers } from "@/components/providers";
 import { StructuredData } from "@/components/structured-data";
 import {
@@ -150,6 +151,7 @@ export default function RootLayout({
         </a>
         <StructuredData />
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
